@@ -1,7 +1,11 @@
-from django.urls import path
+from django.urls import include, path
+from rest_framework import routers
 from courses.api import views
 
 app_name = "courses"
+
+router = routers.DefaultRouter()
+router.register("courses", views.CourseViewSet)
 
 urlpatterns = [
     path(
@@ -14,4 +18,5 @@ urlpatterns = [
         views.SubjectDetailView.as_view(), 
         name="subject_detail"
     ),
+    path("", include(router.urls)),
 ]
