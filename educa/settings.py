@@ -38,11 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "students.apps.StudentsConfig",
     "embed_video",
     "debug_toolbar",
     "redisboard",
     "rest_framework",
+    "chat.apps.ChatConfig",
+    "students.apps.StudentsConfig",
 ]
 
 MIDDLEWARE = [
