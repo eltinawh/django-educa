@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     "courses.apps.CoursesConfig",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -78,7 +79,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'educa.wsgi.application'
-
+ASGI_APPLICATION = "educa.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -158,4 +159,13 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     ]
+}
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [('127.0.0.1', 6379)]
+        },
+    },   
 }

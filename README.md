@@ -53,9 +53,9 @@ CACHES = {
 
 Redis
 ```bash
-docker pull redis:7:4:2
+docker pull redis:7.4.2
 
-docker run -it --rm --name redis -p 6379:6379 redis:7:4:2
+docker run -it --rm --name redis -p 6379:6379 redis:7.4.2
 ```
 Make sure the setting for CACHES in the `educa/settings.py` file is as follows
 ```
